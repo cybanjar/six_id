@@ -1,1 +1,5 @@
+Video 
+
 AuthServices.signIn("lani@gmail.com", "123456");
+
+pickImage

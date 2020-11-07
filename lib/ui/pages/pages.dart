@@ -27,6 +27,7 @@ part 'preference_page.dart';
 part 'account_confirmation_page.dart';
 
 Future<File> getImage() async {
-  var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+  final _picker = ImagePicker();
+  var image = await _picker.getImage(source: ImageSource.gallery);
   return image;
 }

@@ -11,6 +11,8 @@ class AccountConfirmationPage extends StatefulWidget {
 }
 
 class _AccountConfirmationPageState extends State<AccountConfirmationPage> {
+  bool isSignIn = false;
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -52,7 +54,31 @@ class _AccountConfirmationPageState extends State<AccountConfirmationPage> {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  Container(
+                    width: 150,
+                    height: 150,
+                    margin: EdgeInsets.only(bottom: 30),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image:
+                                (widget.registrationData.profileImage == null)
+                                    ? AssetImage("assets/user_pic.png")
+                                    : FileImage(
+                                        widget.registrationData.profileImage),
+                            fit: BoxFit.cover)),
+                  ),
+                  Text(
+                    "Welcome",
+                    style: blackTextFont.copyWith(
+                        fontSize: 16, fontWeight: FontWeight.w300),
+                  ),
+                  Text(
+                    "${widget.registrationData.name}",
+                    textAlign: TextAlign.center,
+                    style: blackTextFont.copyWith(fontSize: 22),
+                  ),
                 ],
               )
             ],

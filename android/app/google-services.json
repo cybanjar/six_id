@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "888220491073",
-    "firebase_url": "https://bwa-flutix-1b10e.firebaseio.com",
-    "project_id": "bwa-flutix-1b10e",
-    "storage_bucket": "bwa-flutix-1b10e.appspot.com"
+    "project_number": "991484597343",
+    "firebase_url": "https://xx-two-cinema.firebaseio.com",
+    "project_id": "xx-two-cinema",
+    "storage_bucket": "xx-two-cinema.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:888220491073:android:727dc7e5324646b1e2d5c0",
+        "mobilesdk_app_id": "1:991484597343:android:70ea674d1eb684982c37ea",
         "android_client_info": {
-          "package_name": "com.example.bwa_flutix"
+          "package_name": "com.example.xx_one_cinema"
         }
       },
       "oauth_client": [
         {
-          "client_id": "888220491073-g14q6l2nfkupubvjvv483prfs13njb8b.apps.googleusercontent.com",
+          "client_id": "991484597343-d4ekcvuk070aidjekgsps34baeqkrl0r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyArbx8I-3_upZojnS9h3WuHOCx2fbXzKis"
+          "current_key": "AIzaSyBH-yvZ3WTIHDeQbq6p0DM4pDcU_tTpLpk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "888220491073-g14q6l2nfkupubvjvv483prfs13njb8b.apps.googleusercontent.com",
+              "client_id": "991484597343-d4ekcvuk070aidjekgsps34baeqkrl0r.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

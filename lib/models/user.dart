@@ -10,11 +10,20 @@ class User extends Equatable {
   final int balance;
 
   User(this.id, this.email,
-      {this.name,
+      {this.name, // optional
       this.profilePicture,
       this.selectedGenres,
       this.selectedLanguage,
       this.balance});
+
+  // Methods copyWith untuk mengcopy hanya pada perubahan property
+  User copyWith({String name, String profilePicture, int balance}) =>
+      User(this.id, this.email,
+          name: name ?? this.name,
+          profilePicture: profilePicture ?? this.profilePicture,
+          balance: balance ?? this.balance,
+          selectedGenres: selectedGenres,
+          selectedLanguage: selectedLanguage);
 
   @override
   String toString() {

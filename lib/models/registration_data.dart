@@ -1,5 +1,6 @@
 part of 'models.dart';
 
+// untuk menyimpan data registrasi
 class RegistrationData {
   String name;
   String email;

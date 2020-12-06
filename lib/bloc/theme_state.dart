@@ -8,3 +8,8 @@ class ThemeState extends Equatable {
   @override
   List<Object> get props => [themeData];
 }
+
+// class ThemeInitial extends ThemeState {
+//   @override
+//   List<Object> get props => [];
+// }

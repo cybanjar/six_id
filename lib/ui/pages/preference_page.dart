@@ -32,6 +32,7 @@ class _PreferencePageState extends State<PreferencePage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        // mengosongkan password ketika back
         widget.registrationData.password = "";
 
         context

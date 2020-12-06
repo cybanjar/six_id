@@ -1,6 +1,11 @@
 part of 'pages.dart';
 
 class MainPage extends StatefulWidget {
+  final int bottomNavbarIndex;
+  final bool isExpired;
+
+  MainPage({this.bottomNavbarIndex = 0, this.isExpired = false});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -13,7 +18,7 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     super.initState();
 
-    bottomNavbarIndex = 0;
+    bottomNavbarIndex = widget.bottomNavbarIndex;
     pageController = PageController(initialPage: bottomNavbarIndex);
   }
 
@@ -38,8 +43,8 @@ class _MainPageState extends State<MainPage> {
             },
             children: [
               MoviePage(),
-              Center(
-                child: Text("My Tickets"),
+              TicketPage(
+                isExpiredTicket: widget.isExpired,
               )
             ],
           ),
@@ -58,8 +63,7 @@ class _MainPageState extends State<MainPage> {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    context.bloc<UserBloc>().add(SignOut());
-                    AuthServices.signOut();
+                    context.bloc<PageBloc>().add(GoToTopupPage(GoToMainPage()));
                   }),
             ),
           )
@@ -93,6 +97,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 items: [
                   BottomNavigationBarItem(
+                      // ignore: deprecated_member_use
                       title: Text("Movies",
                           style: GoogleFonts.raleway(
                               fontSize: 13, fontWeight: FontWeight.w600)),
@@ -104,6 +109,7 @@ class _MainPageState extends State<MainPage> {
                             : "assets/icon_movies_not.png"),
                       )),
                   BottomNavigationBarItem(
+                      // ignore: deprecated_member_use
                       title: Text("Tikets",
                           style: GoogleFonts.raleway(
                               fontSize: 13, fontWeight: FontWeight.w600)),

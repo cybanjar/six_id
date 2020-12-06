@@ -1,17 +1,18 @@
 part of 'widgets.dart';
 
 class SelectableBox extends StatelessWidget {
-  final bool isSelected;
-  final bool isEnable;
-  final double width;
-  final double height;
-  final String text;
-  final Function onTap;
-  final TextStyle textStyle;
+  final bool isSelected; //apakah sedang di select atau tidak
+  final bool isEnabled; // bisa di select atau tidak
+  final double width; // lebar box
+  final double height; // tinggi box
+  final String text; // tulisan di dalamnya
+  final Function onTap; // apa yg terjadi kalo di tap
+  final TextStyle textStyle; // style tulisan
 
+  // contructor nya
   SelectableBox(this.text,
       {this.isSelected = false,
-      this.isEnable = true,
+      this.isEnabled = true,
       this.width = 144,
       this.height = 60,
       this.onTap,
@@ -30,13 +31,17 @@ class SelectableBox extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
-            color: (!isEnable)
+            color: (!isEnabled)
                 ? accentColor4
-                : isSelected ? accentColor2 : Colors.transparent,
+                : isSelected
+                    ? accentColor2
+                    : Colors.transparent,
             border: Border.all(
-                color: (!isEnable)
+                color: (!isEnabled)
                     ? accentColor4
-                    : isSelected ? Colors.transparent : accentColor2)),
+                    : isSelected
+                        ? Colors.transparent
+                        : accentColor2)),
         child: Center(
           child: Text(text ?? "None",
               style: textStyle ??

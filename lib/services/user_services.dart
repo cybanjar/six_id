@@ -1,11 +1,11 @@
 part of 'services.dart';
 
 class UserServices {
+  // datanya ada di cloud firestore users
   static CollectionReference _userCollection =
       Firestore.instance.collection('users');
 
   static Future<void> updateUser(User user) async {
-    // User simpan di firestore
     _userCollection.document(user.id).setData({
       'email': user.email,
       'name': user.name,
@@ -16,6 +16,7 @@ class UserServices {
     });
   }
 
+  // ambil user untuk auth
   static Future<User> getUser(String id) async {
     DocumentSnapshot snapshot = await _userCollection.document(id).get();
 

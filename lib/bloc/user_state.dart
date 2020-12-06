@@ -12,8 +12,10 @@ class UserInitial extends UserState {
 class UserLoaded extends UserState {
   final User user;
 
+  // menyimpan data user
   UserLoaded(this.user);
 
   @override
+  // List<Object> get props => throw UnimplementedError();
   List<Object> get props => [user];
 }

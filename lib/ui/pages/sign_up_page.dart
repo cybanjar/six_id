@@ -19,15 +19,19 @@ class _SignUpPageState extends State<SignUpPage> {
   void initState() {
     super.initState();
 
+    // name yg ada di registration data jika gak ada kosong
     nameController.text = widget.registrationData.name;
     emailController.text = widget.registrationData.email;
   }
 
   @override
   Widget build(BuildContext context) {
+    // context
+    //     .bloc<ThemeBloc>()
+    //     .add(ChangeTheme(ThemeData().copyWith(primaryColor: Colors.grey)));
     return WillPopScope(
       onWillPop: () async {
-        context.bloc<PageBloc>().add(GoToSpashPage());
+        context.bloc<PageBloc>().add(GoToSplashPage());
         return;
       },
       child: Scaffold(
@@ -47,7 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(
                             onTap: () {
-                              context.bloc<PageBloc>().add(GoToSpashPage());
+                              context.bloc<PageBloc>().add(GoToSplashPage());
                             },
                             child: Icon(Icons.chevron_left),
                           ),

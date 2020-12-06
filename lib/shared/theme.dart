@@ -1,6 +1,6 @@
 part of 'shared.dart';
 
-const double defaultMargin = 24;
+const double defaultMargin = 20;
 
 Color mainColor = Color(0xFF8FB7F3);
 Color accentColor1 = Color(0xFFAAA1F4);
@@ -22,3 +22,5 @@ TextStyle whiteNumberFont =
     GoogleFonts.openSans().copyWith(color: Colors.white);
 TextStyle yellowNumberFont =
     GoogleFonts.openSans().copyWith(color: accentColor2);
+TextStyle blackNumberFont =
+    GoogleFonts.openSans().copyWith(color: Colors.black);

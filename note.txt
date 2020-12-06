@@ -1,4 +1,8 @@
-Video 
+Video 23
+
+MIGRATION => https://firebase.flutter.dev/docs/migration/
+FirebaseUser => User
+AuthResult => UserCredential
 
 AuthServices.signIn("lani@gmail.com", "123456");
 

@@ -11,7 +11,7 @@ class AccountConfirmationPage extends StatefulWidget {
 }
 
 class _AccountConfirmationPageState extends State<AccountConfirmationPage> {
-  bool isSignIn = false;
+  bool isSigningUp = false;
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +79,55 @@ class _AccountConfirmationPageState extends State<AccountConfirmationPage> {
                     textAlign: TextAlign.center,
                     style: blackTextFont.copyWith(fontSize: 22),
                   ),
+                  SizedBox(
+                    height: 110,
+                  ),
+                  (isSigningUp)
+                      ? SpinKitDoubleBounce(
+                          color: mainColor,
+                          size: 50,
+                        )
+                      : SizedBox(
+                          width: 250,
+                          height: 45,
+                          child: RaisedButton(
+                              elevation: 0,
+                              color: mainColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Text(
+                                "Create My Account",
+                                style: whiteTextFont.copyWith(fontSize: 16),
+                              ),
+                              onPressed: () async {
+                                setState(() {
+                                  isSigningUp = true;
+                                });
+
+                                imageFileToUpload =
+                                    widget.registrationData.profileImage;
+
+                                SignInSignUpResult result =
+                                    await AuthServices.signUp(
+                                        widget.registrationData.email,
+                                        widget.registrationData.password,
+                                        widget.registrationData.name,
+                                        widget.registrationData.selectedGenres,
+                                        widget.registrationData.selectedLang);
+
+                                if (result.user == null) {
+                                  setState(() {
+                                    isSigningUp = false;
+                                  });
+
+                                  Flushbar(
+                                    duration: Duration(microseconds: 1500),
+                                    flushbarPosition: FlushbarPosition.TOP,
+                                    backgroundColor: Color(0xFFFF5C83),
+                                    message: result.message,
+                                  )..show(context);
+                                }
+                              }))
                 ],
               )
             ],
